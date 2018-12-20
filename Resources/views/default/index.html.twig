@@ -53,7 +53,7 @@
                                 {% trans %}Local{% endtrans %}
                             </th>
                             <th>
-                                {% trans %}Departamento{% endtrans %}
+                                {% trans %}Categoria{% endtrans %}
                             </th>
                             <th></th>
                         </tr>
@@ -130,6 +130,8 @@
                                         {{ form_row(impressaoForm.exibirNomeServico, { label: 'Exibir nome do serviço', attr: { 'v-model': 'impressao.exibirNomeServico' } }) }}
 
                                         {{ form_row(impressaoForm.exibirMensagemServico, { label: 'Exibir mensagem do serviço', attr: { 'v-model': 'impressao.exibirMensagemServico' } }) }}
+                                        
+                                        {{ form_row(impressaoForm.exibirId, { label: 'Exibir id atendimento', attr: { 'v-model': 'impressao.exibirId' } }) }}
                                     </div>
                                 </div>
 
