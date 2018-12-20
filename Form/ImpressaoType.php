@@ -28,14 +28,10 @@ class ImpressaoType extends AbstractType
     {
         $builder
             ->add('cabecalho', TextareaType::class, [
-                'attr' => [
-                    'rows' => 4
-                ]
+                'required' => false
             ])
             ->add('rodape', TextareaType::class, [
-                'attr' => [
-                    'rows' => 4
-                ]
+                'required' => false
             ])
             ->add('exibirData', CheckboxType::class, [
                 'required' => false
@@ -50,6 +46,9 @@ class ImpressaoType extends AbstractType
                 'required' => false
             ])
             ->add('exibirMensagemServico', CheckboxType::class, [
+                'required' => false
+            ])
+            ->add('exibirId', CheckboxType::class, [
                 'required' => false
             ])
         ;
