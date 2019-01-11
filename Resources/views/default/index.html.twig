@@ -256,13 +256,13 @@
                                         <th>
                                             <a v-on:click="toggle_visibility('#' + usuario.login, '#toggle_' + usuario.login);" style="cursor: pointer;">
                                                 <button class="btn btn-primary">
-                                                    <i v-bind:id="'toggle_' + usuario.login" class='fa fa-minus'></i>
+                                                    <i v-bind:id="'toggle_' + usuario.login" class='fa fa-plus'></i>
                                                 </button>
                                             </a>
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody v-bind:id="usuario.login">
+                                <tbody v-bind:id="usuario.login"  style="display: none">
                                     <tr v-for="servicoUsuario in usuario.servicos">
                                         <td>
                                             {% verbatim %}
