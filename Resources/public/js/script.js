@@ -297,6 +297,33 @@
                     }
                 });
             },
+            
+            toggle_visibility: function (id, idToggle) {
+                if ($(id).is(":visible") ) {
+                    $(id).hide();
+                    var abaOrigem = JSON.parse(sessionStorage.getItem("abaOrigem"));
+                    if (abaOrigem) {
+                        abaOrigem.forEach(function(item, index) {
+                            if (item.secao == id){
+                                abaOrigem.splice(index, 1);
+                            }
+                        });
+                        sessionStorage.setItem('abaOrigem', JSON.stringify(abaOrigem));
+                    }
+                } else {
+                    $(id).show();
+                    var abaOrigem = JSON.parse(sessionStorage.getItem("abaOrigem"));
+                    var aba = {};
+                    aba = {"secao": id, "trs": idToggle};
+                    if (abaOrigem && Object.keys(abaOrigem).indexOf(id) == -1) {
+                        abaOrigem.push(aba);
+                    } else {
+                        abaOrigem = [aba]
+                    }
+                    sessionStorage.setItem('abaOrigem', JSON.stringify(abaOrigem));
+                }
+                $(idToggle).toggleClass("fa fa-minus fa fa-plus");
+            },
 
             init: function () {
                 var self = this;
