@@ -253,10 +253,16 @@
                                         <th>
                                             {% trans %}Peso{% endtrans %}
                                         </th>
-                                        <th></th>
+                                        <th>
+                                            <a v-on:click="toggle_visibility('#' + usuario.login, '#toggle_' + usuario.login);" style="cursor: pointer;">
+                                                <button class="btn btn-primary">
+                                                    <i v-bind:id="'toggle_' + usuario.login" class='fa fa-minus'></i>
+                                                </button>
+                                            </a>
+                                        </th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody v-bind:id="usuario.login">
                                     <tr v-for="servicoUsuario in usuario.servicos">
                                         <td>
                                             {% verbatim %}
