@@ -53,6 +53,9 @@ class ServicoUnidadeType extends AbstractType
             ->add('prioridade', CheckboxType::class, [
                 'required' => false
             ])
+            ->add('ehDestaque', CheckboxType::class, [
+                'required' => false
+            ])
             ->add('mensagem', TextareaType::class, [
                 'required' => false
             ])
